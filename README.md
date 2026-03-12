@@ -4,7 +4,7 @@ Algorytmy sortowania AIDS:
 -Quick Sort iteracyjnie 
 -Quick Sort rekurencyjnie (DONE)
 -Merge Sort (DONE)
--Heap Sort  (DONE)
+-Heap Sort
 
 TO DO
 -wrzucić wszystkie aglorytmy jako osobne pliki (jako import funkcji potem do programu głównego)
