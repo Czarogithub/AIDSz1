@@ -3,8 +3,8 @@ Algorytmy sortowania AIDS:
 -Shell Sort (DONE/ half)
 -Quick Sort iteracyjnie 
 -Quick Sort rekurencyjnie (DONE)
--Merge Sort
--Heap Sort
+-Merge Sort (DONE)
+-Heap Sort  (DONE)
 
 TO DO
 -wrzucić wszystkie aglorytmy jako osobne pliki (jako import funkcji potem do programu głównego)
