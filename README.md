@@ -1,8 +1,8 @@
 # AIDSz1
 Algorytmy sortowania AIDS:
--Shell Sort
--Quick Sort iteracyjnie
--Quick Sort rekurencyjnie
+-Shell Sort (DONE/ half)
+-Quick Sort iteracyjnie 
+-Quick Sort rekurencyjnie (DONE)
 -Merge Sort
 -Heap Sort
 
