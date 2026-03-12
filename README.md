@@ -3,7 +3,7 @@ Algorytmy sortowania AIDS:
 -Shell Sort (DONE/ half)
 -Quick Sort iteracyjnie 
 -Quick Sort rekurencyjnie (DONE)
--Merge Sort
+-Merge Sort (DONE)
 -Heap Sort
 
 TO DO
