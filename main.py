@@ -6,15 +6,15 @@ import quick_sort_rek as quick_r
 import shell_sort as shell
 
 if __name__=="__main__":
-    c = 1 #ILOSC CIAGOW NA RODZAJ
+    c = 10 #ILOSC CIAGOW NA RODZAJ
     n = 12 #MAKSYMALNA DLUGOSC CIAGU
-    only_one = True #PRZELACZNIK GENERACJI - True - GENERACJA TYLKO DLA N
+    only_one = False #PRZELACZNIK GENERACJI - True - GENERACJA TYLKO DLA N
 
 
     limit = 1 if only_one else n
     gen_lsts=[]
     for i in range(limit):
-        gen_lsts.extend(gen.generate(c,n))
+        gen_lsts.extend(gen.generate(c,n if only_one else i+1))
 
     x = 1
     with open('results.txt',"w") as results:
