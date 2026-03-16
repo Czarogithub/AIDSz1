@@ -14,7 +14,7 @@ if __name__=="__main__":
     limit = 1 if only_one else n
     gen_lsts=[]
     for i in range(limit):
-        gen_lsts.extend(gen.generate(c,n))\
+        gen_lsts.extend(gen.generate(c,n))
 
     x = 1
     with open('results.txt',"w") as results:
