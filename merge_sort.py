@@ -1,39 +1,56 @@
+import time
+
+
 def merge_sort(lst):
-    total_merges = 0
-    if len(lst)>1:
-        mid_id = len(lst)//2
-        l_half = lst[:mid_id]
-        r_half = lst[mid_id:]
+    start_time = time.perf_counter()
+    stats = [0, 0]
 
-        l_half, l_merges = merge_sort(l_half)
-        r_half, r_merges = merge_sort(r_half)
+    def sort(l):
+        if len(l) <= 1:
+            return l
 
-        total_merges = l_merges + r_merges + 1
-        x = y = z = 0
-        while x < len(l_half) and y < len(r_half):
-            if l_half[x] > r_half[y]:
-                lst[z] = l_half[x]
-                x+=1
+        mid = len(l) // 2
+        left = sort(l[:mid])
+        right = sort(l[mid:])
+
+        stats[1] += 1
+        return merge(left, right)
+
+    def merge(left, right):
+        result = []
+        i = j = 0
+
+        while i < len(left) and j < len(right):
+            stats[0] += 1
+            if left[i] < right[j]:
+                result.append(left[i])
+                i += 1
             else:
-                lst[z] = r_half[y]
-                y += 1
-            z += 1
+                result.append(right[j])
+                j += 1
 
-        while x < len(l_half):
-            lst[z] = l_half[x]
-            x += 1
-            z += 1
+        while i < len(left):
+            result.append(left[i])
+            i += 1
 
-        while y < len(r_half):
-            lst[z] = r_half[y]
-            y += 1
-            z += 1
-    return lst, total_merges
+        while j < len(right):
+            result.append(right[j])
+            j += 1
 
-if __name__=='__main__':
-    merge_sort.ctr = 0
+        return result
+
+    sorted_list = sort(lst)
+    end_time = time.perf_counter()
+    execution_time = end_time - start_time
+    return sorted_list, stats[0], execution_time, stats[1]
+
+
+if __name__ == '__main__':
     my_lst = [38, 27, 43, 3, 9, 82, 10]
-    result = merge_sort(my_lst)
-    sorted_list = result[0]
-    ctr = result[1]
-    print(sorted_list, ctr)
+
+    res, comps, merges, duration = merge_sort(my_lst)
+
+    print("Posortowana lista:", res)
+    print("Porównania:", comps)
+    print("Scalenia:", merges)
+    print(f"Czas: {duration:.6f} sek.")

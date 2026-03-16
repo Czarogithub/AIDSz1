@@ -34,12 +34,13 @@ def data_v(n):
     data+=data_decreasing(a)
     data += data_growing(n-a)
     return data
-def generate(n):
+def generate(c,n):
+    dataa = []
     #to do 1 metody
-    file = open("data.txt", "w")
+    #file = open("data.txt", "w")
     #to do 2 metody
     # dataa = []
-    for i in range(10):
+    for i in range(c):
         #ten sposób zapisuje ci do pliku data.txt wszystkie ciągi
         # file.write(" ".join(map(str,data_random(n)))+"\n")
         # file.write(" ".join(map(str,data_growing(n)))+"\n")
@@ -47,15 +48,15 @@ def generate(n):
         # file.write(" ".join(map(str, data_a(n)))+"\n")
         # file.write(" ".join(map(str, data_v(n)))+"\n")
         #ten sposób zapisuje ci wszystkie ciągi do jednej listy i funkcja generate zwraca tą liste
-        # dataa.append(data_random(n))
-        # dataa.append(data_growing(n))
-        # dataa.append(data_decreasing(n))
-        # dataa.append(data_a(n))
-        # dataa.append(data_v(n))
+        dataa.append(data_random(n))
+        dataa.append(data_growing(n))
+        dataa.append(data_decreasing(n))
+        dataa.append(data_a(n))
+        dataa.append(data_v(n))
+    return dataa
 
     # tu też jedną z 2 linijek wybierz zalezy ktora metode
     file.close()
     # return dataa
 
 
-print(generate(5))

@@ -33,18 +33,19 @@ def shell_sort(t):
             t[i+h]=key
         h=h//3
     end_t = time.perf_counter()
-    print(f"Czas trwania algorytmu: {end_t-start_t:.6f} sekund")
-    return [t,counter1,counter2,knuth]
+    #print(f"Czas trwania algorytmu: {end_t-start_t:.6f} sekund")
+    execution_time = end_t-start_t
+    return t,counter2,counter1,execution_time,knuth
 
-
-t=[4,2,5,1,3,2,1,3,2,2,2,21,3,1]
-result=shell_sort(t)
-print(result[0])
-print(f"Liczba zamian wynosi {result[1]}")
-print(f"Liczba porównań wynosi {result[2]}")
-if len(t)<=12:
-    print("Tryb demonstracyjny")
-    print(f"Wartość przyrostu w kolejnych iteracjach {result[3]}")
+if __name__=="__main__":
+    t=[4,2,5,1,3,2,1,3,2,2,2,21,3,1]
+    result=shell_sort(t)
+    print(result[0])
+    print(f"Liczba zamian wynosi {result[1]}")
+    print(f"Liczba porównań wynosi {result[2]}")
+    if len(t)<=12:
+        print("Tryb demonstracyjny")
+        print(f"Wartość przyrostu w kolejnych iteracjach {result[3]}")
 
 
 
